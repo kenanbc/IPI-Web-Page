@@ -6,7 +6,7 @@ body{
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    background: url('background.jpg');
+    background: url('../slike/background.jpg');
 }
 
 h1{
@@ -37,7 +37,7 @@ h1{
 }
 
 button{
-    background: red;
+    background: #345aaa;
     color: white;
     border: none;
     border-radius: 8px;
@@ -47,7 +47,7 @@ button{
 }
 
 button:hover{
-    background: #005fa3;
+    background: #345aaa;
 }
 
 canvas{
@@ -57,7 +57,7 @@ canvas{
     touch-action: none;
     max-width: 90vw;
     max-height: 70vh;
-    cursor: url('marker.png') 0 30 auto;
+    cursor: url('../slike/marker.png') 0 30 auto;
 }
 
 footer{
@@ -65,4 +65,9 @@ footer{
     font-size: 13px;
     color: #555;
     background-color: white;
+}
+
+button:hover{
+    background: turquoise;
+    transform: scale(1.05);
 }

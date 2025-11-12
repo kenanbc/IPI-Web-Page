@@ -1,20 +1,19 @@
-
 html {
-    background: #7b7775;
+    background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
 }
 form {
-    background: #eaeaea;
+    background: #ffffff;
     padding: 30px 40px;
     border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     max-width: 500px;
     margin: 180px auto 0 auto;
-    border: 1px solid #e0e0e0;
+    border: 1px solid #ddd;
 }
 
 form label {
     display: block;
-    color: #c30f10;
+    color: #4a90e2;
     font-weight: bold;
 }
 
@@ -23,21 +22,20 @@ form input[type="email"],
 form input[type="tel"],
 form textarea {
     width: 100%;
-    padding: 8px 10px;
+    padding: 10px;
     margin-bottom: 18px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 6px;
     font-size: 14px;
     background: #fff;
     box-sizing: border-box;
-    transition: border 0.2s;
 }
 
 form input[type="text"]:focus,
 form input[type="email"]:focus,
 form input[type="tel"]:focus,
 form textarea:focus {
-    border: 1.5px solid #c30f10;
+    border-color: #4a90e2;
     outline: none;
 }
 
@@ -51,37 +49,35 @@ form input[type="checkbox"] {
     width: 18px;
     height: 18px;
     margin-right: 8px;
-    accent-color: #c30f10;
     vertical-align: middle;
 }
 
 form label[for="tac"] {
     display: inline;
     font-weight: normal;
-    color: #484645;
+    color: #333;
 }
 
 form input[type="submit"] {
-    background-color: #c30f10;
+    background-color: #4a90e2;
     color: white;
     font-weight: bold;
     border: none;
-    padding: 10px 30px;
-    border-radius: 5px;
+    padding: 12px 30px;
+    border-radius: 6px;
     font-size: 15px;
     cursor: pointer;
-    transition: background 0.2s;
 }
 
 form input[type="submit"]:hover {
-    background-color: #a00c0c;
+    background-color: #357abd;
 }
 
 body
 {
-    font-size:12px;
-    font-family: Verdana, Arial, sans-serif;
-    color:#484645;
+    font-size:14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:#333;
     margin:0;
     line-height:1.6;
 }
@@ -96,23 +92,27 @@ header, article
     width:80%;
     margin: 0px auto;
     background-color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    margin-bottom: 20px;
 }
 
 nav
 {
-    background-color: #c30f10;
-    padding: 10px 0;
+    background: linear-gradient(90deg, #4a90e2 0%, #357abd 100%);
+    padding: 15px 0;
     text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
        
 }
 
 nav a, nav a:hover, nav a:visited, nav a:active
-
 {
     color:white;
-    padding:10px 20px;
+    padding:12px 25px;
     display:inline-block;
     text-transform:uppercase;
+    transition: background-color 0.3s ease;
 }
 
 nav a
@@ -120,12 +120,13 @@ nav a
     display: inline-block;
     width:100%;
     text-decoration: none;
+    border-radius: 5px;
 }
 
 nav a:hover
 {
-    
-    text-decoration: underline;
+    background-color: rgba(255,255,255,0.2);
+    text-decoration: none;
 }
 
 nav ul
@@ -142,13 +143,13 @@ nav ul li
 
 a, a:hover, a:visited, a:active
 {
-    color: #c30f10;
+    color: #345aaa;
     font-weight:bold;
 }
 
 h2, h3
 {
-    color: #c30f10;
+    color: #345aaa;
 }
 
 article
@@ -156,7 +157,7 @@ article
     padding :20px 40px;
     box-sizing: border-box;
     
-    border-bottom: 2px solid #c00000;
+    border-bottom: 2px solid #345aaa;
     min-height:600px;
 }
 
@@ -169,41 +170,45 @@ article img
 
 footer
 {
-    padding-top: 15px;
-    min-height: 30px;
-    background: #7b7775;
+    padding-top: 20px;
+    min-height: 40px;
+    background: linear-gradient(90deg, #4a90e2 0%, #357abd 100%);
     color:white;
     text-align:center;
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
 }
 
 table
 {
     border-collapse: collapse;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 6px;
+    overflow: hidden;
 }
 
 td, th
 {
-    font-size:12px;
-    border: solid 1px #6d6c6c;
-    padding:5px 3px;
+    font-size:14px;
+    border: solid 1px #ddd;
+    padding:8px 5px;
 }
 
 th
 {
-    color:#6d6c6c;
-    background-color: #f7dcdc;
-    height:30px;
+    color:#333;
+    background-color: #f8f9fa;
+    height:35px;
 }
 
 td:nth-child(4)
 {
     text-align: right;
-    padding-right: 5px;
+    padding-right: 10px;
 }
 
 tr:nth-child(odd)
 {
-    background-color: #e8e8e8;
+    background-color: #f8f9fa;
 }
 
 iframe
@@ -220,7 +225,7 @@ fieldset
 
 fieldset legend
 {
-    color: #c30f10;
+    color: #345aaa;
     font-weight:bold;
 }
 
@@ -249,19 +254,64 @@ input[type=checkbox]
 
 button
 {
-    background-color: #c30f10;
+    background-color: #4a90e2;
     color:white;
     font-weight:bold;
     border:none;
-    padding:10px 30px;
-    border-radius:5px;
-    
+    padding:12px 30px;
+    border-radius:6px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
 }
 
-.container
+button:hover
 {
-    max-width: 1200px;
+    background-color: #357abd;
+}
+
+.games {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 800px;
     margin: 0 auto;
-    background-color: white;
-    box-sizing: border-box;
+}
+
+.game-card {
+    border: 2px solid #4a90e2;
+    border-radius: 8px;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+.game-card:hover {
+    transform: translateY(-5px);
+}
+
+.game-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    display: block;
+}
+
+.game-card button {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(74, 144, 226, 0.9);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.game-card button:hover {
+    background-color: rgba(57, 114, 179, 0.9);
 }
