@@ -4,6 +4,15 @@
         <meta charset="utf-8">
         <title>Student fun zone IPI</title>
         <link rel="stylesheet" href="css/izgled.css">
+        <style>
+            iframe {
+                width: 100%;
+                height: 600px;
+                border: none;
+                margin-top: 20px;
+                display: none;
+            }
+        </style>
     </head>
     <body>
         <header>
@@ -22,27 +31,42 @@
         </header>
         <article>
 		<h2>Student Fun Zone</h2>
-	
+            <iframe id="okvir"></iframe>
         <div class="games">
             <div class="game-card bingo">
                 <img src="./slike/bingo.PNG" alt="">
-                <button onclick="location.href='bingo.html'">Bingo</button>
+                <button onclick="otvoriStranicu('bingo.html')">Bingo</button>
             </div>
             <div class="game-card kviz">
                 <img src="./slike/kviz.PNG" alt="">
-                <button onclick="location.href='kviz.html'">Kviz</button>
+                <button onclick="otvoriStranicu('kviz.html')">Kviz</button>
             </div>
             <div class="game-card whiteboard">
                 <img src="./slike/whiteboard.PNG" alt="">
-                <button onclick="location.href='whiteboard.html'">WhiteBoard</button>
+                <button onclick="otvoriStranicu('whiteboard.html')">WhiteBoard</button>
             </div>
             <div class="game-card visionboard">
                 <img src="./slike/visionboard.PNG" alt="">
-                <button onclick="location.href='visionboard.html'">VisionBoard</button>
+                <button onclick="otvoriStranicu('visionboard.html')">VisionBoard</button>
             </div>
         </div>
         </article>
         <footer>
         &copy; Internacionalna poslovno-informaciona akademija Tuzla
-    </footer></body>
+    </footer>
+
+    <script>
+        function otvoriStranicu(stranica) {
+            let okvir = document.getElementById('okvir');
+            okvir.src = stranica;
+            okvir.style.display = "block";
+        }
+
+        function zatvoriFrame() {
+            let okvir = document.getElementById('okvir');
+            okvir.style.display = "none";
+            okvir.src = "";
+        }
+    </script>
+</body>
 </html>
