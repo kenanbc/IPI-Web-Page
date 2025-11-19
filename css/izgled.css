@@ -214,6 +214,7 @@ tr:nth-child(odd)
 iframe
 {
     margin-top:20px;
+    margin-bottom: 50px
 }
 
 fieldset
@@ -271,7 +272,7 @@ button:hover
 
 .games {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     max-width: 800px;
     margin: 0 auto;
@@ -292,10 +293,15 @@ button:hover
 }
 
 .game-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
     display: block;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .game-card button {
