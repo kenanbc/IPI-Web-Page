@@ -102,8 +102,32 @@
       });
 
       form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
         validateForm();
-        if (btn.disabled) e.preventDefault();
+        if (btn.disabled) return;
+
+        const ime = document.getElementById('ime').value;
+        const prezime = document.getElementById('prezime').value;
+        const email = document.getElementById('email').value;
+        const telefon = document.getElementById('telefon').value;
+        const adresa = document.getElementById('adresa').value;
+        const poruka = document.getElementById('poruka').value;
+
+        const mailto = 'info@ipiakademija';
+        const subject = `Kontakt forma - ${ime} ${prezime}`;
+        const body = `
+                    Ime: ${ime}
+                    Prezime: ${prezime}
+                    Email: ${email}
+                    Telefon: ${telefon}
+                    Adresa: ${adresa}
+
+                    Poruka:
+                    ${poruka}
+                            `;
+
+        window.location.href = `mailto:${mailto}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       });
 
       window.addEventListener('DOMContentLoaded', validateForm);

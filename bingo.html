@@ -55,7 +55,19 @@
     <p>Skupi 5 potpisa zaredom - BINGO!</p>
     <p>Svaka osoba može staviti inicijale na vaš papir samo dva puta.</p>
     <button onclick="generatePDF();">Preuzmi kao PDF</button>
-            <button onclick="parent.zatvoriFrame()" style="background-color: red;">Izlaz</button>
+    <button onclick="openEmailModal();">Pošalji mailom</button>
+    <button onclick="parent.zatvoriFrame()" style="background-color: red;">Izlaz</button>
+
+    <div id="emailModal" class="email-modal">
+      <div class="email-modal-content">
+        <h3>Pošalji mailom</h3>
+        <input type="email" id="emailInput" placeholder="Unesite email adresu..." />
+        <div class="email-modal-buttons">
+          <button onclick="sendEmail();" class="email-send-btn">Pošalji</button>
+          <button onclick="closeEmailModal();" class="email-cancel-btn">Poništi</button>
+        </div>
+      </div>
+    </div>
 
     <script>
     function generatePDF() {
@@ -68,7 +80,37 @@
        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
        };
        html2pdf().set(options).from(element).save();
+    }
+
+    function openEmailModal() {
+       document.getElementById('emailModal').style.display = 'block';
+       document.getElementById('emailInput').value = '';
+    }
+
+    function closeEmailModal() {
+       document.getElementById('emailModal').style.display = 'none';
+    }
+
+    function sendEmail() {
+       const email = document.getElementById('emailInput').value.trim();
+       if (email === '' || !email.includes('@')) {
+          alert('Molimo unesite validnu email adresu!');
+          return;
        }
+       
+       const subject = 'Bingo Challenge - Student Fun Zone';
+       const body = 'Pogledajte moj Bingo Challenge!\n\nU ovoj igri potrebno je skupiti 5 potpisa zaredom.';
+       
+       window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+       closeEmailModal();
+    }
+
+    window.onclick = function(event) {
+       const modal = document.getElementById('emailModal');
+       if (event.target === modal) {
+          closeEmailModal();
+       }
+    }
     </script>
   </body>
 </html>

@@ -67,32 +67,30 @@ document.querySelectorAll(".taskList").forEach(list => {
     });
 });
 
-// Ocisti plocu
 const clearModal = document.getElementById("clearModal");
 
 document.getElementById("clearBoardBtn").addEventListener("click", () => {
     clearModal.style.display = "block";
 });
 
-// â€œDA - Ocisti plocuâ€ button
 document.getElementById("clearYes").addEventListener("click", () => {
     document.querySelectorAll(".taskList").forEach(list => list.innerHTML = "");
     clearModal.style.display = "none";
 });
 
-// â€œNE â€“ Cancelâ€ button
+
 document.getElementById("clearNo").addEventListener("click", () => {
     clearModal.style.display = "none";
 });
 
-// Zatvori van modala
+
 window.addEventListener("click", e => {
     if (e.target === clearModal) {
         clearModal.style.display = "none";
     }
 });
 
-// Snimi plocu kao PNG
+
 document.getElementById("saveBoardBtn").addEventListener("click", () => {
     html2canvas(document.body).then(canvas => {
         const link = document.createElement("a");
@@ -102,7 +100,7 @@ document.getElementById("saveBoardBtn").addEventListener("click", () => {
     });
 });
 
-// Ucitaj html2canvas dynamically
+
 const script = document.createElement("script");
 script.src = "https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js";
 document.body.appendChild(script);
@@ -111,4 +109,49 @@ window.addEventListener("click", e => {
     if (e.target === modal) {
         modal.style.display = "none";
     }
+    if (e.target === emailModal) {
+        emailModal.style.display = "none";
+    }
+});
+
+const savePDFBtn = document.getElementById('savePDFBtn');
+savePDFBtn.addEventListener('click', () => {
+    const element = document.body;
+    const options = {
+        margin: 0.5,
+        filename: 'kanban.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'landscape' }
+    };
+    html2pdf().set(options).from(element).save();
+});
+
+const emailBtn = document.getElementById('emailBtn');
+const emailModal = document.getElementById('emailModal');
+const emailInput = document.getElementById('emailInput');
+const sendEmailBtn = document.getElementById('sendEmailBtn');
+const cancelEmailBtn = document.getElementById('cancelEmailBtn');
+
+emailBtn.addEventListener('click', () => {
+    emailModal.style.display = 'block';
+    emailInput.value = '';
+});
+
+cancelEmailBtn.addEventListener('click', () => {
+    emailModal.style.display = 'none';
+});
+
+sendEmailBtn.addEventListener('click', () => {
+    const email = emailInput.value.trim();
+    if (email === '' || !email.includes('@')) {
+        alert('Molimo unesite validnu email adresu!');
+        return;
+    }
+    
+    const subject = 'Kanban Board - Student Fun Zone';
+    const body = 'Pogledajte moj Kanban Board!';
+    
+    window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    emailModal.style.display = 'none';
 });

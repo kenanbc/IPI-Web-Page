@@ -13,6 +13,8 @@
     <div class="buttons">
       <button id="addTaskBtn">Dodai zadatak</button>
       <button id="saveBoardBtn">Snimi</button>
+      <button id="savePDFBtn">Snimi kao PDF</button>
+      <button id="emailBtn">Pošalji mailom</button>
       <button id="clearBoardBtn">Očisti ploču</button>
       <button onclick="parent.zatvoriFrame()" style="background-color: red;">Izlaz</button>
     </div>
@@ -35,6 +37,17 @@
         <div class="modal-buttons">
           <button id="clearYes" style="background-color: #e74c3c;">Očisti</button>
             <button id="clearNo">Poništi</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="emailModal" class="email-modal">
+      <div class="email-modal-content">
+        <h3>Pošalji mailom</h3>
+        <input type="email" id="emailInput" placeholder="Unesite email adresu..." />
+        <div class="email-modal-buttons">
+          <button id="sendEmailBtn" class="email-send-btn">Pošalji</button>
+          <button id="cancelEmailBtn" class="email-cancel-btn">Poništi</button>
         </div>
       </div>
     </div>
@@ -63,6 +76,7 @@
         </p>
     </footer>
 
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
      <script src="kanbanJS.js"></script>
 
   </body>
